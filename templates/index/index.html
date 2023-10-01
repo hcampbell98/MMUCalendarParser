@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MMU Calendar Beautifier</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
+    </head>
+    <body>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                let form = document.querySelector(".url-form form");
+                form.addEventListener("submit", (e) => {
+                    e.preventDefault();
+
+                    // Get the URL
+                    let url = form.querySelector("input[name=url]").value;
+
+                    if (!url) {
+                        return;
+                    }
+
+                    //Convert to base64
+                    let base64 = btoa(url);
+
+                    // Add div with base64 string
+                    let div = document.createElement("div");
+                    div.innerHTML = `<p class="output">${window.location.origin}/cal/${base64}</p>`;
+                    form.parentElement.appendChild(div);
+
+                    // Clear the form
+                    form.querySelector("input[name=url]").value = "";
+                });
+            });
+        </script>
+
+        <div class="page-container">
+            <div class="title">
+                <h1>MMU Calendar Beautifier</h1>
+            </div>
+            <div class="url-form">
+                <form action="processUrl();" method="get">
+                    <input type="text" name="url" placeholder="Calendar URL" />
+                    <input type="submit" value="Beautify" />
+                </form>
+            </div>
+            <div class="info">
+                <p>
+                    This tool is designed to make the MMU calendar integration more readable. By default, the activity name is a bunch of seemingly random info that isn't going to be useful to you.
+                    This tool fixes that, along with a few other things.
+                </p>
+                <div class="compare">
+                    <div class="item">
+                        <h3>Before</h3>
+                        <img src="https://i.hcampbell.dev/hqx8cjnp5c.png" />
+                    </div>
+                    <div class="item">
+                        <h3>After</h3>
+                        <img src="https://i.hcampbell.dev/68q77jiz0s.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
