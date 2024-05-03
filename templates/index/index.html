@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>MMU Calendar Beautifier</title>
-        <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
+        <title>MMU Calendar Beautifier | Home</title>
+        <link rel="stylesheet" href="/static/css/index.css" />
+        <link rel="icon" type="image/x-icon" href="/static/logo.png" />
     </head>
     <body>
         <script>
@@ -33,6 +34,14 @@
                 });
             });
         </script>
+        <img id="logo" src="/static/logo.png">
+        <nav>
+            <ul class="navigation">
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/instruction">Instructions</a></li>
+                <li class="nav-item"><a href="/about">About</a></li>
+            </ul>
+        </nav>
 
         <div class="page-container">
             <div class="title">
@@ -41,7 +50,7 @@
             <div class="url-form">
                 <form action="processUrl();" method="get">
                     <input type="text" name="url" placeholder="Calendar URL" />
-                    <input type="submit" value="Beautify" />
+                    <input id="submit" type="submit" value="Beautify" />
                 </form>
             </div>
             <div class="info">
@@ -50,16 +59,20 @@
                     that, along with a few other things.
                 </p>
                 <div class="compare">
-                    <div class="item">
-                        <h3>Before</h3>
-                        <img src="https://i.hcampbell.dev/hqx8cjnp5c.png" />
-                    </div>
-                    <div class="item">
-                        <h3>After</h3>
-                        <img src="https://i.hcampbell.dev/68q77jiz0s.png" />
+                    <div id="compare-box">
+                        <div class="item">
+                            <h3>Before</h3>
+                            <img src="https://i.hcampbell.dev/hqx8cjnp5c.png" />
+                        </div>
+                        <div class="item">
+                            <h3>After</h3>
+                            <img src="https://i.hcampbell.dev/68q77jiz0s.png" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <iframe src="/footer" scrolling="no" frameborder="0" width="100%" height="200px"></iframe>
     </body>
 </html>

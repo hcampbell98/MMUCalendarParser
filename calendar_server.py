@@ -16,6 +16,18 @@ app = Flask(__name__)
 def index():
     return render_template("index/index.html")
 
+@app.route("/instruction")
+def instruction():
+    return render_template("index/instruction.html")
+
+@app.route("/about")
+def about():
+    return render_template("index/about.html")
+
+@app.route("/footer")
+def footer():
+    return render_template("index/footer.html")
+
 # @app.route("/")
 # def index():
 

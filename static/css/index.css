@@ -4,6 +4,9 @@ body {
 
     margin: 0;
     padding: 0;
+    background: linear-gradient(#0e0b16 80%, #A239CA 200%) fixed;
+
+    overflow-x: hidden;
 }
 
 body {
@@ -13,18 +16,39 @@ body {
 
     display: flex;
     flex-direction: column;
+    position: relative;
+    
+}
+
+#logo{
+    position: absolute;
+    top: 0;
+    left: 5px;
+    height: 50px;
 }
 
 .page-container {
     display: flex;
     flex-direction: column;
 
-    width: 600px;
+    width: 60vw;
+
+    margin-top: 5vh;
+    padding: 5vh;
+    
+
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+
+    h1 {
+        color: white;
+    }
 }
 
 .title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 2vh;
 }
 
 .url-form {
@@ -33,6 +57,7 @@ body {
 
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 2vh;
 
     > form {
         width: 100%;
@@ -85,9 +110,10 @@ body {
 
             > img {
                 object-fit: contain;
-
-                width: 300px;
-                height: 300px;
+            
+                max-width: 400px;
+                max-height: 400px;
+                width: 100%;
             }
         }
     }
@@ -133,3 +159,102 @@ body {
         }
     }
 }
+
+/* Written By Tom D */
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: black;
+    width: 100vw;
+    height: 10vh;
+    border-bottom: 1px solid rgba(231, 223, 221,0.3);
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav li{
+    display: inline;
+    list-style-type: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border: 1px;
+
+}
+
+nav li:hover {
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+}
+
+nav li:hover a{
+    color: white;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.instructions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instructions img{
+    width: 40vw;
+}
+
+.instructions p{
+    font-size: 36px;
+    text-align: center;
+}
+
+.compare{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#compare-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+p{
+    color:#E7DFDD;
+}
+
+#compare-box h3{
+    color: #E7DFDD;
+}
+
+.title{
+    color: #E7DFDD;
+    font-size: 36px;
+}
+
+#submit {
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  height: 60px;
+  padding-left: 16px;
+  padding-right: 16px;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+  cursor:pointer;
+}
+
